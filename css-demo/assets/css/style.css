@@ -2,6 +2,13 @@
     background-color:deepskyblue;
 }*/
 
+/*
+pink - #F1A2F2
+purple - #21118C
+dark purple - #1B1159
+really dark purple - #101126
+light blue - #6DCCF2*/
+
 html {
   box-sizing: border-box;
 }
@@ -22,4 +29,19 @@ html {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+/*Global Styles*/ /*review this*/
+
+body{
+    font-family: "Martian Mono", monospace;
+    margin:0;
+}
+
+header.primary{
+  background-color:#101126;
+  color: #6DCCF2;
+  text-align: center;
+  text-shadow: 1px 1px #F1A2F2;
+
 }
