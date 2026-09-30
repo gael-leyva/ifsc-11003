@@ -7,7 +7,8 @@ pink - #F1A2F2
 purple - #21118C
 dark purple - #1B1159
 really dark purple - #101126
-light blue - #6DCCF2*/
+light blue - #
+*/
 
 html {
   box-sizing: border-box;
@@ -43,5 +44,60 @@ header.primary{
   color: #6DCCF2;
   text-align: center;
   text-shadow: 1px 1px #F1A2F2;
+  /*longform*/
+  padding-top:40px;
+  padding-right:40px;
+  padding-bottom:40px;
+  padding-left:40px;
+  /*Single Value*/
+  padding:40px; /*applies same value to all 4*/ 
+  /*T/R/B/L*/
+  padding: 40px 40px 20px 40px;
+  /* T/B | R/L */
+  padding: 20px 40px;
+}
+
+/*selector to target hyperlinks at top of page */
+/*gotta target the header bc thats where they're located, you gotta give
+context to the computer*/
+header.primary a{
+  color:gold;
+  text-decoration: none;
+}
+
+header.primary h1{
+  font-size:2.4cm;
+  margin:0;
+}
+
+header.primary p.subtitle{
+  font-size:1.3cm;
+  margin:10px 0 20px;
+  letter-spacing: .2px; /*can also do negative values*/
+}
+
+header.primary nav{
+  
+}
+
+header.primary nav ul{
+  padding:0;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  gap: 30px;
+}
+
+header.primary nav ul li{
+  list-style-type:none;
+
+}
+
+header.primary nav ul li a{
+  background-color: rgba(0, 0, 0, 0.4);
+  padding:5px 7.5px;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #000;
 
 }
