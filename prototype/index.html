@@ -8,24 +8,24 @@
     <title>Web Foundations: Building Meaningful Pages</title>
   </head>
   <body>
-    <header>
-      <h1>Web Foundations: Building Meaningful Pages</h1>
-      <nav aria-label="Main Navigation">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#html-basics">HTML Basics</a></li>
-          <li><a href="#accessibility">Accessibility</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <header id="home">
+  <h1>Web Foundations: Building Meaningful Pages</h1>
+  <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#html-basics">HTML Basics</a></li>
+      <li><a href="#accessibility">Accessibility</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
     <main>
-      <article>
-        <header>
-          <h2>Understanding Semantic HTML</h2>
-        </header>
+      <article id="html-basics">
+       <header>
+    <h2>Understanding Semantic HTML</h2>
+       </header>
 
         <p>
           The web is <em>more than</em> a collection of visually formatted documents. <abbr title="HyperText Markup Language">HTML</abbr> provides meaning and structure to content so that browsers, search engines, assistive technologies, and people can better understand how information is organized.
@@ -35,7 +35,7 @@
           <abbr title="HyperText Markup Language">HTML</abbr> stands for HyperText Markup Language. It describes the structure and meaning of content rather than how that content should look. <abbr title="Cascading Style Sheets">CSS</abbr> is generally responsible for presentation, while JavaScript can add behavior and interactivity.
         </p>
 
-        <section>
+        <section id="accessibility">
           <h3>Why Semantics Matter</h3>
           <p>
             Semantic <abbr title="HyperText Markup Language">HTML</abbr> uses elements according to the <strong>meaning</strong> of the content they contain. Choosing an element because of what it represents, rather than because of its default appearance, produces documents that are easier to understand and maintain.
@@ -51,7 +51,7 @@
           </p>
         </section>
 
-        <section>
+        <section id="common-principles">
           <h3>Common Principles for Well-Structured Pages</h3>
           <ul>
             <li>Use headings to create a logical outline of the document.</li>
@@ -132,7 +132,7 @@
           </figure>
         </section>
 
-        <section>
+        <section id="resources">
           <h3>Recommended Resources</h3>
           <ul>
             <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs</a></li>
@@ -144,7 +144,7 @@
       </article>
     </main>
 
-    <footer>
+    <footer id="contact">
       <h2>About This Site</h2>
       <p>
         Web Foundations is a learning resource for students studying modern front-end development. The material emphasizes standards-based development, semantic HTML, accessibility, and the use of the native web platform.
