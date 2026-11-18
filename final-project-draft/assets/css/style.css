@@ -1,16 +1,15 @@
 /* ==========================================================
-   Back to the Moon: Artemis I-V
-   ONE shared stylesheet for every page.
+   Back to the Moon: Artemis website project
 
-   Color theme
-   Night        #0c1424  (header, aside, deep sections)
-   Deep Space   #16233f  (footer, gradients)
-   Lunar Dust   #eceae4  (page background)
-   Ink          #1c2230  (body text)
-   Regolith     #4a5163  (secondary text)
-   Earthrise    #6cb4ff  (accent on dark backgrounds)
-   Cobalt       #1b4fa8  (accent on light backgrounds)
-   Sunlight     #e9b44c  (highlights on dark backgrounds)
+   Colors
+   Night        #0c1424
+   Deep Space   #16233f
+   Lunar Dust   #eceae4
+   Ink          #1c2230
+   Regolith     #4a5163
+   Earthrise    #6cb4ff
+   Cobalt       #1b4fa8
+   Sunlight     #e9b44c
    ========================================================== */
 
 /* ---------------Box Sizing----------------- */
@@ -32,34 +31,6 @@ html {
   max-width: 1000px;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-.skip-link {
-  position: absolute;
-  left: 1rem;
-  top: -4rem;
-  background: #e9b44c;
-  color: #0c1424;
-  padding: 0.6rem 1rem;
-  font-weight: 700;
-  z-index: 10;
-}
-
-.skip-link:focus {
-  top: 1rem;
-}
-
-/* ---- Responsive Images ----*/
 img {
   max-width: 100%;
   height: auto;
@@ -95,7 +66,7 @@ h3 {
 }
 
 p {
-  max-width: 62ch;
+  max-width: 650px;
   margin: 0 0 1rem;
 }
 
@@ -107,43 +78,12 @@ a:hover {
   color: #0c1424;
 }
 
-/* Visible focus for keyboard users */
-a:focus-visible {
-  outline: 3px solid #1b4fa8;
-  outline-offset: 3px;
-}
-
 /* ------------- Header --------------- */
 
 header.site {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(180deg, #0c1424 0%, #16233f 100%);
+  background-color: #0c1424;
   color: #ffffff;
   padding: 1.5rem 0 3.5rem;
-}
-
-/* The Moon's edge, drawn with CSS only (no image needed) */
-header.site::before {
-  content: "";
-  position: absolute;
-  right: -140px;
-  bottom: -330px;
-  width: 560px;
-  height: 560px;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 28% 30%, rgba(0, 0, 0, 0.14) 0 6%, transparent 7%),
-    radial-gradient(circle at 56% 20%, rgba(0, 0, 0, 0.1) 0 4%, transparent 5%),
-    radial-gradient(circle at 38% 52%, rgba(0, 0, 0, 0.12) 0 9%, transparent 10%),
-    radial-gradient(circle at 70% 45%, rgba(0, 0, 0, 0.09) 0 5%, transparent 6%),
-    radial-gradient(circle at 30% 30%, #f1efe8, #bdbab0 55%, #7e7c75);
-  box-shadow: 0 0 70px 8px rgba(236, 234, 228, 0.22);
-}
-
-/* Keep header content above the Moon layer */
-header.site .container {
-  position: relative;
 }
 
 .header-bar {
@@ -161,7 +101,6 @@ header.site .container {
   font-family: "Unbounded", "Trebuchet MS", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
 }
 
 .brand a {
@@ -172,8 +111,7 @@ header.site .container {
 header.site nav ul {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.25rem 1.75rem;
+  gap: 1.75rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -185,19 +123,15 @@ header.site nav a {
   text-decoration: none;
   padding: 0.35rem 0;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.3s;
+  transition: 0.3s;
 }
 
 header.site nav a:hover {
   border-bottom-color: #6cb4ff;
 }
 
-header.site nav a[aria-current="page"] {
+header.site nav a.current  {
   border-bottom-color: #e9b44c;
-}
-
-header.site a:focus-visible {
-  outline-color: #e9b44c;
 }
 
 .header-text {
@@ -205,7 +139,7 @@ header.site a:focus-visible {
 }
 
 header.site h1 {
-  font-size: clamp(1.8rem, 4.6vw, 3rem);
+  font-size: 2.8rem;
   font-weight: 600;
   margin: 0 0 1rem;
   max-width: 17em;
@@ -214,11 +148,11 @@ header.site h1 {
 header.site .tagline {
   color: #c9ced8;
   font-size: 1.2rem;
-  max-width: 34rem;
+  max-width: 550px;
   margin: 0;
 }
 
-/* Page hook (body id): the home page gets a taller header */
+/*  taller header for home */
 body#home header.site {
   padding-bottom: 6.5rem;
 }
@@ -241,21 +175,21 @@ section.flightpath {
 }
 
 ol.path {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: 1.5rem;
+  list-style: none;
   margin: 3rem 0 0;
   padding: 0;
   border-top: 2px solid #1b4fa8;
 }
 
 ol.path li {
+  flex: 1;
   position: relative;
   padding-top: 1.5rem;
 }
 
-/* Node on the line: filled = completed, hollow = planned */
 ol.path li::before {
   content: "";
   position: absolute;
@@ -295,8 +229,7 @@ section.banner {
 }
 
 section.banner img {
-  aspect-ratio: 21 / 9;
-  object-position: center 10%;
+  height: 600px;
 }
 
 /* ------------- Figures (shared) --------------- */
@@ -308,8 +241,7 @@ figure {
 figure img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 2;
+  height: 300px;
   object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 6px 18px rgba(12, 20, 36, 0.25);
@@ -325,7 +257,8 @@ figcaption {
 /* ------------- Story rows (mission pages + Moon Base) --------------- */
 
 .story-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 4.5rem;
   margin-top: 2.5rem;
   padding-bottom: 4rem;
@@ -338,27 +271,26 @@ figcaption {
   gap: 3rem;
 }
 
-/* Odd rows: image left, text right. Even rows flip it. */
 .story:nth-child(even) {
   flex-direction: row-reverse;
 }
 
 .story figure {
-  flex: 1 1 44%;
+  width: 40%;
 }
 
 .story-body {
-  flex: 1 1 56%;
+  width: 60%;
 }
 
 .story-body h2 {
   font-size: 1.45rem;
 }
 
+/* Quick facts list */
 dl.facts {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.35rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
   margin: 1.25rem 0;
   padding: 1rem 0 0;
   border-top: 1px solid #b9b6ab;
@@ -367,15 +299,20 @@ dl.facts {
 }
 
 dl.facts dt {
+  width: 25%;
+  margin: 0;
+  padding-bottom: 0.4rem;
   font-weight: 600;
   color: #1b4fa8;
 }
 
 dl.facts dd {
+  width: 75%;
   margin: 0;
+  padding-bottom: 0.4rem;
 }
 
-/* ------------- Aside (dark section) --------------- */
+/* ------------- dark section --------------- */
 
 aside.dark {
   background: #0c1424;
@@ -384,9 +321,13 @@ aside.dark {
 }
 
 aside.dark .container {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 3.5rem;
+}
+
+aside.dark article {
+  flex: 1;
 }
 
 aside.dark h2 {
@@ -399,36 +340,6 @@ aside.dark a {
 
 aside.dark a:hover {
   color: #ffffff;
-}
-
-aside.dark a:focus-visible {
-  outline-color: #e9b44c;
-}
-
-aside.dark table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.98rem;
-}
-
-aside.dark th {
-  text-align: left;
-  color: #e9b44c;
-  font-weight: 600;
-  padding: 0.6rem 0.75rem 0.6rem 0;
-  border-bottom: 2px solid #e9b44c;
-}
-
-aside.dark tbody th {
-  color: #ffffff;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(236, 234, 228, 0.25);
-  padding: 0.7rem 0.75rem 0.7rem 0;
-}
-
-aside.dark td {
-  padding: 0.7rem 0.75rem 0.7rem 0;
-  border-bottom: 1px solid rgba(236, 234, 228, 0.25);
 }
 
 aside.dark ul {
@@ -458,14 +369,4 @@ footer.site p {
 
 footer.site a {
   color: #ffffff;
-}
-
-footer.site a:focus-visible {
-  outline-color: #e9b44c;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
 }
